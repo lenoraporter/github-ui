@@ -16,6 +16,7 @@ Router.map(function() {
       this.route("issues");
     }); // org/jquery/jquery-ui
   });
+  this.route('notfound', {path: '*path'}); // Making a 404 page
 });
 
 export default Router;
