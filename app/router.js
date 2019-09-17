@@ -7,16 +7,22 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // LIST OF ORGS
   this.route("orgs", {}); // /orgs
-  this.route("org", { path: "org/:id" }, function() {
-    //org/emberjs
+
+  //INDIVIDUAL ORG
+  this.route("org", { path: "org/:id" }, function() { //org/emberjs
+    
+    // LIST OF REPOS
     this.route("repos", {});
+
+    // INDIVIDUAL REPO
     this.route("repo", { path: ":repoid" }, function() {
-      this.route("contributors");
-      this.route("issues");
+      this.route("contributors", {});
+      this.route("issues", {});
     }); // org/jquery/jquery-ui
   });
-  this.route('notfound', {path: '*path'}); // Making a 404 page
+  this.route("notfound", {path: "*path"}); // Making a 404 page
 });
 
 export default Router;
