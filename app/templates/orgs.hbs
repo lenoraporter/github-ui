@@ -1,7 +1,10 @@
 <h2>My Favorites Orgs</h2>
 <ul>
   {{#each model as |org|}}
-    <li>{{link-to org.id "org" org.id}}</li>
+    <li>
+      <span {{action 'favoriteClicked' org}}>[Favorite]</span> 
+      {{link-to org.id "org" org.id}}
+    </li>
   {{/each}}
 </ul>
 
